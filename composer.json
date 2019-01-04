@@ -69,9 +69,8 @@
             "security-checker security:check": "script"
         },
         "post-install-cmd": [
-            "@removeInstalledNodeModules"
-        ],
-        "removeInstalledNodeModules": "[ -n \"$STACK\" ] && [ -n \"$DYNO\" ] && rm -f test.file || :"
+            "scripts/slug_cleanup.sh"
+        ]
     },
     "conflict": {
         "symfony/symfony": "*"
