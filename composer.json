@@ -71,7 +71,7 @@
         "post-install-cmd": [
             "@removeInstalledNodeModules"
         ],
-        "removeInstalledNodeModules": "env"
+        "removeInstalledNodeModules": "env; [ -n \"$STACK\" ] && echo yeah this is heroku FFS && du -sh"
     },
     "conflict": {
         "symfony/symfony": "*"
