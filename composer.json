@@ -67,7 +67,11 @@
             "cache:clear": "symfony-cmd",
             "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd",
             "security-checker security:check": "script"
-        }
+        },
+        "post-install-cmd": [
+            "@removeInstalledNodeModules"
+        ],
+        "removeInstalledNodeModules": "env"
     },
     "conflict": {
         "symfony/symfony": "*"
